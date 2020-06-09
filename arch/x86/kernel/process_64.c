@@ -40,7 +40,7 @@
 #include <linux/ftrace.h>
 #include <linux/syscalls.h>
 
-#include <asm/pgtable.h>
+#include <linux/pgtable.h>
 #include <asm/processor.h>
 #include <asm/fpu/internal.h>
 #include <asm/mmu_context.h>

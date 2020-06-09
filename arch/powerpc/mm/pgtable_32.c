@@ -24,7 +24,7 @@
 #include <linux/memblock.h>
 #include <linux/slab.h>
 
-#include <asm/pgtable.h>
+#include <linux/pgtable.h>
 #include <asm/pgalloc.h>
 #include <asm/fixmap.h>
 #include <asm/setup.h>

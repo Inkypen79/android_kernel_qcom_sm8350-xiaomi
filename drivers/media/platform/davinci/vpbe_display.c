@@ -17,7 +17,7 @@
 #include <linux/videodev2.h>
 #include <linux/slab.h>
 
-#include <asm/pgtable.h>
+#include <linux/pgtable.h>
 
 #include <media/v4l2-dev.h>
 #include <media/v4l2-common.h>

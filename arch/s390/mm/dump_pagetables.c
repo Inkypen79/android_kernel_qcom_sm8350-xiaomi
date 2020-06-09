@@ -6,7 +6,7 @@
 #include <linux/kasan.h>
 #include <asm/kasan.h>
 #include <asm/sections.h>
-#include <asm/pgtable.h>
+#include <linux/pgtable.h>
 
 static unsigned long max_addr;
 

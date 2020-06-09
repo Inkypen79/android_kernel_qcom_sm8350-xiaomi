@@ -11,7 +11,7 @@
 
 #include <asm/extable.h>
 #include <asm/page.h>
-#include <asm/pgtable.h>
+#include <linux/pgtable.h>
 
 #include <xen/interface/xen.h>
 #include <xen/interface/grant_table.h>

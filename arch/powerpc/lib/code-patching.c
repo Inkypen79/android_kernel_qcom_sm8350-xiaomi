@@ -12,7 +12,7 @@
 #include <linux/slab.h>
 #include <linux/uaccess.h>
 
-#include <asm/pgtable.h>
+#include <linux/pgtable.h>
 #include <asm/tlbflush.h>
 #include <asm/page.h>
 #include <asm/code-patching.h>

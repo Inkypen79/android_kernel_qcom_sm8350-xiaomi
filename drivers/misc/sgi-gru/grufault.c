@@ -21,7 +21,7 @@
 #include <linux/uaccess.h>
 #include <linux/security.h>
 #include <linux/prefetch.h>
-#include <asm/pgtable.h>
+#include <linux/pgtable.h>
 #include "gru.h"
 #include "grutables.h"
 #include "grulib.h"

@@ -12,7 +12,7 @@
 #include <asm/mipsregs.h>
 #include <asm/mmu_context.h>
 #include <asm/page.h>
-#include <asm/pgtable.h>
+#include <linux/pgtable.h>
 #include <asm/tlbdebug.h>
 
 void dump_tlb_regs(void)

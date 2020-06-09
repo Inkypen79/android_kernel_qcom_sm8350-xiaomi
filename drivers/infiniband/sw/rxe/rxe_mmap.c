@@ -35,7 +35,7 @@
 #include <linux/vmalloc.h>
 #include <linux/mm.h>
 #include <linux/errno.h>
-#include <asm/pgtable.h>
+#include <linux/pgtable.h>
 #include <rdma/uverbs_ioctl.h>
 
 #include "rxe.h"

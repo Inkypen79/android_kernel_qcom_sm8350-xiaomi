@@ -21,7 +21,7 @@
 #include <linux/memblock.h>
 #include <linux/compat.h>
 #include <asm/asm-offsets.h>
-#include <asm/pgtable.h>
+#include <linux/pgtable.h>
 #include <asm/processor.h>
 #include <asm/mmu.h>
 #include <asm/mmu_context.h>

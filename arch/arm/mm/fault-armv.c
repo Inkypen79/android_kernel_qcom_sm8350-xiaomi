@@ -17,7 +17,7 @@
 #include <asm/bugs.h>
 #include <asm/cacheflush.h>
 #include <asm/cachetype.h>
-#include <asm/pgtable.h>
+#include <linux/pgtable.h>
 #include <asm/tlbflush.h>
 
 #include "mm.h"

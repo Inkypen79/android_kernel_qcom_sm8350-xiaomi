@@ -50,7 +50,7 @@
 #include <linux/mm.h>
 #include <linux/slab.h>
 
-#include <asm/pgtable.h>
+#include <linux/pgtable.h>
 #include <asm/unwind.h>
 #include <asm/sections.h>
 

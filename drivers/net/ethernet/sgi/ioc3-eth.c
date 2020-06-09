@@ -53,7 +53,7 @@
 #include <net/ip.h>
 
 #include <asm/byteorder.h>
-#include <asm/pgtable.h>
+#include <linux/pgtable.h>
 #include <linux/uaccess.h>
 #include <asm/sn/types.h>
 #include <asm/sn/ioc3.h>

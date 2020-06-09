@@ -23,7 +23,7 @@
 #include <linux/init.h>
 
 #include <asm/tlbflush.h>
-#include <asm/pgtable.h>
+#include <linux/pgtable.h>
 #include <asm/mmu_context.h>
 #include <asm/spr_defs.h>
 

@@ -30,7 +30,7 @@
 #include <linux/llist.h>
 
 #include <asm/page.h>
-#include <asm/pgtable.h>
+#include <linux/pgtable.h>
 #include <asm/tlb.h>
 
 #include <linux/io.h>

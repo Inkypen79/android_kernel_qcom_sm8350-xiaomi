@@ -446,7 +446,6 @@ extern void paging_init(void);
 #define TASK_SIZE FIXADDR_START
 #endif
 
-#include <asm-generic/pgtable.h>
 
 #endif /* !__ASSEMBLY__ */
 

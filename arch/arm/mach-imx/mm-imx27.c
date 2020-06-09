@@ -8,7 +8,7 @@
 #include <linux/mm.h>
 #include <linux/init.h>
 #include <linux/pinctrl/machine.h>
-#include <asm/pgtable.h>
+#include <linux/pgtable.h>
 #include <asm/mach/map.h>
 
 #include "common.h"
