@@ -420,7 +420,7 @@ config QTI_BATTERY_CHARGER
 
 config QTI_BATTERY_CHARGER_ODIN
 	tristate "QTI Glink battery charger"
-	depends on QTI_PMIC_GLINK && EXTCON
+	depends on QTI_PMIC_GLINK
 	help
 	  Say Y here to enable Qualcomm Technologies, Inc. battery charger
 	  driver which interfaces with the charger firmware running on the
