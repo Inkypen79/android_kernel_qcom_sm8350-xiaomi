@@ -2385,7 +2385,7 @@ int fts_enable_touch_delta(bool en)
 	return 0;
 }
 
-int fts_enable_touch_raw(bool en)
+int fts_enable_touch_raw(int en)
 {
 	if (en) {
 		fts_info->enable_htp_fw = true;
