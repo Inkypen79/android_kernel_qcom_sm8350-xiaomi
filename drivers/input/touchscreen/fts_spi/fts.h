@@ -4,6 +4,7 @@
  * FTS Capacitive touch screen controller (FingerTipS)
  *
  * Copyright (C) 2017, STMicroelectronics
+ * Copyright (C) 2021 XiaoMi, Inc.
  * Authors: AMG(Analog Mems Group)
  *
  * 		marco.cali@st.com
@@ -56,9 +57,6 @@
 /*** save power mode ***/
 #define FTS_POWER_SAVE_MODE
 
-#define TOUCH_THP_SUPPORT
-#define TOUCH_THP_FW
-
 #define DRIVER_TEST
 
 #define PRE_SAVED_METHOD
@@ -79,9 +77,8 @@
 
 #define FTS_XIAOMI_TOUCHFEATURE
 #define FTS_FOD_AREA_REPORT
-#define FTS_DEBUG_FS
 
-#define DEBUG
+/* #define DEBUG */
 
 /*#define USE_ONE_FILE_NODE*/
 
@@ -206,7 +203,7 @@ struct fts_hw_platform_data {
 	const char *vdd_reg_name;
 	const char *avdd_reg_name;
 	const char *default_fw_name;
-	const char *thp_fw_name;
+	const char *htp_fw_name;
 	size_t config_array_size;
 	struct fts_config_info *config_array;
 	int current_index;
@@ -290,11 +287,7 @@ struct fts_dma_buf {
 };
 #endif
 
-struct tp_frame {
-	s64 time_ns;
-	u64 frm_cnt;
-	char thp_frame_buf[PAGE_SIZE];
-};
+
 /**
  * FTS capacitive touch screen device information
  * - dev             Pointer to the structure device \n
@@ -369,10 +362,6 @@ struct fts_ts_info {
 	struct pinctrl_state *pinctrl_state_suspend;
 	u8 lockdown_info[FTS_LOCKDOWN_SIZE];
 	int result_type;
-	struct proc_dir_entry *tp_selftest_proc;
-	struct proc_dir_entry *tp_data_dump_proc;
-	struct proc_dir_entry *tp_fw_version_proc;
-	struct proc_dir_entry *tp_lockdown_info_proc;
 
 	/* input lock */
 	struct mutex input_report_mutex;
@@ -386,9 +375,6 @@ struct fts_ts_info {
 	unsigned int doze_time;
 	unsigned int grip_pixel_def;
 	unsigned int doze_time_def;
-#ifdef FTS_DEBUG_FS
-	struct dentry *debugfs;
-#endif
 	struct class *fts_tp_class;
 	struct device *fts_touch_dev;
 #ifdef CONFIG_SECURE_TOUCH
@@ -417,12 +403,13 @@ struct fts_ts_info {
 	bool palm_sensor_switch;
 	bool enable_touch_raw;
 	bool enable_touch_delta;
-	bool enable_thp_fw;
+	bool enable_htp_fw;
 	int clicktouch_count;
 	int clicktouch_num;
 	char *data_dump_buf;
 	short strength_buf[PAGE_SIZE];
-	struct tp_frame thp_frame;
+	struct timer_list strength_timer;
+	struct work_struct strength_work;
 	int aod_status;
 	bool tp_pm_suspend;
 	struct completion pm_resume_completion;
