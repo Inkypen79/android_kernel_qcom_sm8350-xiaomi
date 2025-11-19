@@ -334,7 +334,6 @@ struct fts_ts_info {
 	struct work_struct resume_work;
 	struct work_struct cmd_update_work;
 	struct work_struct sleep_work;
-	struct work_struct mode_handler_work;
 	struct workqueue_struct *event_wq;
 	struct workqueue_struct *irq_wq;
 	struct workqueue_struct *touch_feature_wq;
@@ -349,6 +348,8 @@ struct fts_ts_info {
 
 	unsigned int mode;
 	unsigned long touch_id;
+	unsigned long sleep_finger;
+	unsigned long touch_skip;
 #ifdef STYLUS_MODE
 	unsigned long stylus_id;
 #endif
@@ -403,10 +404,12 @@ struct fts_ts_info {
 	atomic_t system_is_resetting;
 	int fod_status;
 	unsigned int fod_overlap;
+	unsigned long fod_id;
 	unsigned long fod_x;
 	unsigned long fod_y;
 	struct mutex fod_mutex;
 	struct mutex cmd_update_mutex;
+	bool fod_coordinate_update;
 	bool fod_pressed;
 	bool prox_sensor_changed;
 	bool prox_sensor_switch;
@@ -431,12 +434,15 @@ struct fts_ts_info {
 	int last_y[TOUCH_ID_MAX];
 	struct work_struct switch_mode_work;
 	struct work_struct grip_mode_work;
+	bool big_area_fod;
 	struct delayed_work power_supply_work;
 	int charging_status;
 	struct notifier_block power_supply_notifier;
 	bool probe_ok;
 	struct mutex charge_lock;
+	int fod_icon_status;
 	int nonui_status;
+	bool fod_down;
 };
 
 int fts_chip_powercycle(struct fts_ts_info *info);
